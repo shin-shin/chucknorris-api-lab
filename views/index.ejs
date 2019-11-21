@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+  <main>
+      <h1><%= title %></h1>
+      <p>Choose a category or receive a random joke</p>
+
+
+      <form action="/" method="GET">
+        <select name="category" class="">
+          <% cats.forEach( (c, idx) => { %>
+          <option value="<%= c %>"><%= c %></option>
+          <% }) %>
+        </select>
+        <button type="submit">Get Chuck Norris Joke</button>
+      </form>
+      <p><%= joke %></p>
+  </main>
+</body>
+
 </html>
